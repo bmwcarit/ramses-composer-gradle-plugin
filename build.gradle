@@ -1,0 +1,44 @@
+//  -------------------------------------------------------------------------
+//  Copyright (C) 2022 BMW AG
+//  -------------------------------------------------------------------------
+//  This Source Code Form is subject to the terms of the Mozilla Public
+//  License, v. 2.0. If a copy of the MPL was not distributed with this
+//  file, You can obtain one at https://mozilla.org/MPL/2.0/.
+//  -------------------------------------------------------------------------
+
+plugins {
+    id 'groovy'
+    id 'java-gradle-plugin'
+    id 'maven-publish'
+    id 'com.gradle.plugin-publish' version '0.21.0'
+}
+
+dependencies {
+    compileOnly gradleApi()
+}
+
+project.description     = 'A Gradle plugin to enable ramses scene export integration in Gradle projects'
+project.group           = 'io.github.bmwcarit'
+project.version         = '0.2.0'
+
+project.ext.name        = 'Ramses Composer Plugin'
+project.ext.pluginId    = 'io.github.bmwcarit.RaCoPlugin'
+project.ext.scm         = 'https://github.com/bmwcarit/ramses-composer-gradle-plugin.git'
+project.ext.url         = 'https://github.com/bmwcarit/ramses-composer-gradle-plugin'
+
+gradlePlugin {
+    plugins {
+        RaCoPlugin {
+            id = project.pluginId
+            displayName = project.name
+            description = project.description
+            implementationClass = project.pluginId
+        }
+    }
+}
+
+pluginBundle {
+    website = project.url
+    vcsUrl = project.scm
+    tags = ['ramses', 'RaCo', 'Ramses Composer']
+}
