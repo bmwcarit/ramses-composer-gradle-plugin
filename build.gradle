@@ -19,7 +19,7 @@ dependencies {
 
 project.description     = 'A Gradle plugin to enable ramses scene export integration in Gradle projects'
 project.group           = 'io.github.bmwcarit'
-project.version         = '0.2.0'
+project.version         = '0.3.0'
 
 project.ext.name        = 'Ramses Composer Plugin'
 project.ext.pluginId    = 'io.github.bmwcarit.RaCoPlugin'
