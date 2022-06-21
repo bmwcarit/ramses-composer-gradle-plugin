@@ -13,13 +13,18 @@ plugins {
     id 'com.gradle.plugin-publish' version '0.21.0'
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+}
+
 dependencies {
     compileOnly gradleApi()
 }
 
 project.description     = 'A Gradle plugin to enable ramses scene export integration in Gradle projects'
 project.group           = 'io.github.bmwcarit'
-project.version         = '0.3.0'
+project.version         = '0.3.1'
 
 project.ext.name        = 'Ramses Composer Plugin'
 project.ext.pluginId    = 'io.github.bmwcarit.RaCoPlugin'
